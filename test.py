@@ -28,8 +28,8 @@ TRAIN_DIR = utils.train_dir(TYPE)
 VALIDATION_DIR = utils.validation_dir(TYPE)
 
 loss = utils.get_loss(TYPE)
-optimizer = tf.keras.optimizers.Adam()
-fine_tune_optimizer = tf.keras.optimizers.Adam(lr=fine_tune_learning_rate)
+optimizer = tf.keras.optimizers.RMSprop(lr=learning_rate)
+fine_tune_optimizer = tf.keras.optimizers.RMSprop(lr=fine_tune_learning_rate)
 
 total_epochs = epochs + fine_tune_epochs
 
